@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,22 +18,46 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center justify-center p-4 text-white">
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center p-4 text-white">
 
-    <div class="max-w-md w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 text-center adventure-card border border-white/20">
-        <h1 class="text-3xl font-bold mb-8 drop-shadow-md">Micro-Adventure Generator</h1>
+    <div class="w-full max-w-md flex justify-between items-center mb-6 pt-4">
+        <h1 class="text-xl font-bold drop-shadow-md">MicroAdv</h1>
+        <div id="streak-container" class="bg-black/20 backdrop-blur-sm rounded-full px-4 py-1 flex items-center gap-2 border border-white/10">
+            <span class="text-xl">🔥</span>
+            <span id="streak-count" class="font-bold text-lg">0</span>
+        </div>
+    </div>
+
+    <div class="max-w-md w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-8 text-center adventure-card border border-white/20 mb-8">
         
         <div id="adventure-container" class="mb-8 min-h-[100px] flex items-center justify-center">
             <p id="adventure-display" class="text-xl font-medium opacity-90">Are you bored?</p>
         </div>
 
-        <button id="generate-btn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-indigo-900 font-bold py-4 px-6 rounded-full text-xl shadow-lg transform transition hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400/50">
+        <button id="generate-btn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-indigo-900 font-bold py-4 px-6 rounded-full text-xl shadow-lg transform transition hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400/50 mb-4">
             I'm Bored
         </button>
+
+        <div id="action-buttons" class="hidden flex flex-col gap-3 animate-fade-in">
+            <button id="complete-btn" class="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transform transition hover:scale-105 active:scale-95">
+                Mission Accomplished!
+            </button>
+            <button id="share-btn" class="w-full bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transform transition hover:scale-105 active:scale-95 border border-white/30">
+                Share Adventure
+            </button>
+        </div>
 
         <div class="mt-8 pt-6 border-t border-white/10">
             <p class="text-sm uppercase tracking-wider opacity-70 mb-2">Last Adventure Completed</p>
             <p id="last-adventure" class="text-md italic">None yet</p>
+        </div>
+    </div>
+
+    <div class="max-w-md w-full">
+        <h2 class="text-lg font-bold mb-4 opacity-90 px-2">History</h2>
+        <div id="history-container" class="space-y-3 pb-8">
+            <!-- History items will be injected here -->
+            <p class="text-center opacity-50 italic text-sm py-4">No completed adventures yet.</p>
         </div>
     </div>
 
